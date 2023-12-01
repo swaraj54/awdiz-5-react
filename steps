@@ -1,0 +1,14 @@
+React setup :-
+npx create-react-app frontend 
+cd frontend
+npm start
+
+To stop terminal :-
+ctrl + c 
+y 
+
+React Routing :-
+npm i react-router-dom
+check it in package.json 
+npm start
+Add BrowserRouter in index.js, above and below of App
