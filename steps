@@ -12,3 +12,4 @@ npm i react-router-dom
 check it in package.json 
 npm start
 Add BrowserRouter in index.js, above and below of App
+Inside App component use Routes Route along with path, element attributes,

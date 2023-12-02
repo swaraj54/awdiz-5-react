@@ -1,13 +1,12 @@
 import Navbar from "./Navbar";
 
-
-function Home() {
+function Register() {
     return (
         <div>
             {/* <Navbar /> */}
-            <h1>Home Page</h1>
+            <h1>Register</h1>
         </div>
     )
 }
 
-export default Home;
+export default Register;
