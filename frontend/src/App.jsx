@@ -7,6 +7,7 @@ import Register from './Components/Register'
 import NoPageFound from './Components/NoPageFound';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
+import Counter from './Components/Counter';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/counter' element={<Counter />} />
         {/* assignment - set routes for login and register */}
       </Routes>
       <Footer />
