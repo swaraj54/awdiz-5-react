@@ -1,28 +1,26 @@
 import { useEffect, useState } from "react";
 
-function UseEffect() {
-    // state 
-    // functions
-    // useeffects
+function UseEffect4() {
     const [counter, setCounter] = useState(0);
     const [counter2, setCounter2] = useState(10);
 
     function Increment() {
-        setCounter((prevState) => prevState + 1)
+        setCounter((prevValue) => prevValue + 1)
     }
 
     function Increment2() {
-        setCounter2((prevState) => prevState + 1)
+        setCounter2((prevValue) => prevValue + 1)
     }
 
+
     useEffect(() => {
+
         alert("Hi from useeffect.")
-        console.log("hii")
-    }); // no dependency
+    }, [counter, counter2])
 
     return (
         <div>
-            <h1>UseEffect</h1>
+            <h1>UseEffect3</h1>
             <h1>Counter : {counter}</h1>
             <button onClick={Increment}>+</button>
             <h1>Counter 2 : {counter2}</h1>
@@ -31,4 +29,4 @@ function UseEffect() {
     )
 }
 
-export default UseEffect;
+export default UseEffect4;
