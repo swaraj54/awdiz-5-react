@@ -15,8 +15,22 @@ import UseEffect3 from './Components/08-12/UseEffect3';
 import UseEffect4 from './Components/08-12/UseEffect4';
 import UseParams from './Components/08-12/UseParams';
 import DynamicRouting from './Components/08-12/DynamicRouting';
+import PropsMaps from './Components/09-12/PropsMaps';
+import { useState } from 'react';
+import MapObject from './Components/09-12/MapObject';
+import StyledComponent from './Components/09-12/StyledComponent';
 
 function App() {
+
+  const [myName, setMyName] = useState("Awdiz")
+
+  const [students, setStudents] = useState([{ image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs1wQLZqIhYASivJhwDTSzAD7sN-N9w-3sCQKc4XrV8wIgFwsB-Sb_RRqKe3akMfSPxiA&usqp=CAU', name: "virat", marks: "100" }, { image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs1wQLZqIhYASivJhwDTSzAD7sN-N9w-3sCQKc4XrV8wIgFwsB-Sb_RRqKe3akMfSPxiA&usqp=CAU", name: "rahul", marks: "100" }, { name: "rohit", marks: "100", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs1wQLZqIhYASivJhwDTSzAD7sN-N9w-3sCQKc4XrV8wIgFwsB-Sb_RRqKe3akMfSPxiA&usqp=CAU" }]);
+
+
+  function ChangeName() {
+    setMyName("Awdiz Institute.")
+  }
+
   return (
     <div className="App">
       <Navbar />
@@ -33,6 +47,9 @@ function App() {
         <Route path='/use-effect-4' element={<UseEffect4 />} />
         <Route path='/dynamic-routing' element={<DynamicRouting />} />
         <Route path='/use-params/:age' element={<UseParams />} />
+        <Route path='/props-map' element={<PropsMaps kuchbhi={myName} myAge="25" ChangeName={ChangeName} myStudents={["krish", "jay", "shahbaj", "shrusti", "adesh"]} />} />
+        <Route path='/map-object' element={<MapObject myStudentsData={students} />} />
+        <Route path='/styled-component' element={<StyledComponent />} />
         {/* assignment - set routes for login and register */}
       </Routes>
       <Footer />
