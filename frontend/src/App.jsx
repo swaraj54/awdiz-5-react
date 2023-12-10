@@ -16,9 +16,12 @@ import UseEffect4 from './Components/08-12/UseEffect4';
 import UseParams from './Components/08-12/UseParams';
 import DynamicRouting from './Components/08-12/DynamicRouting';
 import PropsMaps from './Components/09-12/PropsMaps';
-import { useState } from 'react';
+import { Children, useState } from 'react';
 import MapObject from './Components/09-12/MapObject';
 import StyledComponent from './Components/09-12/StyledComponent';
+import Js from './Components/10-12/Js';
+import ChildrenProp from './Components/10-12/ChildrenProp';
+import RegisterForm from './Components/10-12/RegisterForm';
 
 function App() {
 
@@ -50,6 +53,9 @@ function App() {
         <Route path='/props-map' element={<PropsMaps kuchbhi={myName} myAge="25" ChangeName={ChangeName} myStudents={["krish", "jay", "shahbaj", "shrusti", "adesh"]} />} />
         <Route path='/map-object' element={<MapObject myStudentsData={students} />} />
         <Route path='/styled-component' element={<StyledComponent />} />
+        <Route path='/js' element={<Js />} />
+        <Route path='/children-prop' element={<ChildrenProp />} />
+        <Route path='/register-form' element={<RegisterForm />} />
         {/* assignment - set routes for login and register */}
       </Routes>
       <Footer />
