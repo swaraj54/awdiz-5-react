@@ -15,8 +15,8 @@ function Navbar() {
                 <p>KIDS</p>
             </div>
             <div className='flex w-20'>
-                <p onClick={() => router('/login')} >LOGIN</p>
-                <p onClick={() => router('/register')}>REGISTER</p>
+                <p onClick={() => router('/login-form')} >LOGIN</p>
+                <p onClick={() => router('/register-form')}>REGISTER</p>
             </div>
         </div >
     )

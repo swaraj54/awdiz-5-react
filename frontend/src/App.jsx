@@ -22,6 +22,8 @@ import StyledComponent from './Components/09-12/StyledComponent';
 import Js from './Components/10-12/Js';
 import ChildrenProp from './Components/10-12/ChildrenProp';
 import RegisterForm from './Components/10-12/RegisterForm';
+import LoginForm from './Components/15-12/LoginForm';
+import ChildToParent from './Components/16-12/ChildToParent';
 
 function App() {
 
@@ -56,6 +58,8 @@ function App() {
         <Route path='/js' element={<Js />} />
         <Route path='/children-prop' element={<ChildrenProp />} />
         <Route path='/register-form' element={<RegisterForm />} />
+        <Route path='/login-form' element={<LoginForm />} />
+        <Route path='/child-to-parent' element={<ChildToParent />} />
         {/* assignment - set routes for login and register */}
       </Routes>
       <Footer />
