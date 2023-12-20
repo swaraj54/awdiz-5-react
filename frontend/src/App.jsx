@@ -25,6 +25,8 @@ import RegisterForm from './Components/10-12/RegisterForm';
 import LoginForm from './Components/15-12/LoginForm';
 import ChildToParent from './Components/16-12/ChildToParent';
 import AllProducts from './Components/16-12/AllProducts';
+import Todo from './Todo';
+import SingleProduct from './Components/20-12/SingleProduct';
 
 function App() {
 
@@ -62,6 +64,7 @@ function App() {
         <Route path='/login-form' element={<LoginForm />} />
         <Route path='/child-to-parent' element={<ChildToParent />} />
         <Route path='/all-products' element={<AllProducts />} />
+        <Route path='/single-product/:id' element={<SingleProduct />} />
         {/* assignment - set routes for login and register */}
       </Routes>
       <Footer />
