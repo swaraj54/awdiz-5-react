@@ -27,6 +27,7 @@ import ChildToParent from './Components/16-12/ChildToParent';
 import AllProducts from './Components/16-12/AllProducts';
 import Todo from './Todo';
 import SingleProduct from './Components/20-12/SingleProduct';
+import UseMemo from './Components/22-12/UseMemo';
 
 function App() {
 
@@ -65,6 +66,7 @@ function App() {
         <Route path='/child-to-parent' element={<ChildToParent />} />
         <Route path='/all-products' element={<AllProducts />} />
         <Route path='/single-product/:id' element={<SingleProduct />} />
+        <Route path='/use-memo' element={<UseMemo />} />
         {/* assignment - set routes for login and register */}
       </Routes>
       <Footer />

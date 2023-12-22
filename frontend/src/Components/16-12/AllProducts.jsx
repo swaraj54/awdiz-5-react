@@ -23,7 +23,7 @@ const AllProducts = () => {
 
     function Routing(id) {
         // toast(id) // 1,2,3,4,5
-        router(`/single-product/${id}`);
+        router(`/single-product/${id}`); // /single-product/18
     }
 
     useEffect(() => {
