@@ -3,10 +3,12 @@ import { useMemo, useState } from "react";
 const UseMemo = () => {
     const [count, setCount] = useState(0);
     const [todos, setTodos] = useState(["New Todo"]);
-    const calculation = expensiveCalculation(count); // 1
+    // const calculation = expensiveCalculation(count); // 1
     // if any state changes, page will re-render, 
     // and we not added any condition for function so it'll get executed
     // const calculation = useMemo(() => expensiveCalculation(count), [count]);
+
+    const calculation = useMemo(() => expensiveCalculation(count), [count])
 
     const increment = () => {
         setCount((c) => c + 1);
