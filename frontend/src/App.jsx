@@ -29,6 +29,7 @@ import Todo from './Todo';
 import SingleProduct from './Components/20-12/SingleProduct';
 import UseMemo from './Components/22-12/UseMemo';
 import UseCallback from './Components/23-12/UseCallback';
+import UseReducer from './Components/24-12/UseReducer';
 
 function App() {
 
@@ -69,6 +70,7 @@ function App() {
         <Route path='/single-product/:id' element={<SingleProduct />} />
         <Route path='/use-memo' element={<UseMemo />} />
         <Route path='/use-callback' element={<UseCallback />} />
+        <Route path='/use-reducer' element={<UseReducer />} />
         {/* assignment - set routes for login and register */}
       </Routes>
       <Footer />

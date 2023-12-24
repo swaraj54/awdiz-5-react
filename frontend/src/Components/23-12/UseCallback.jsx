@@ -5,13 +5,13 @@ const UseCallback = () => {
     const [counter, setCounter] = useState(0);
     const [todos, setTodos] = useState([]);
 
-    function AddTodo() {
-        setTodos((todo) => [...todo, "New todo"])
-    }
-
-    // const AddTodo = useCallback(() => {
+    // function AddTodo() {
     //     setTodos((todo) => [...todo, "New todo"])
-    // }, [todos])
+    // }
+
+    const AddTodo = useCallback(() => {
+        setTodos((todo) => [...todo, "New todo"])
+    }, [todos])
 
     return (
         <div>
