@@ -1,10 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import { MyContext } from '../../context/AuthContext';
 
 const LoginForm = () => {
     const [loginData, setLoginData] = useState({ email: "", password: "" });
-    console.log(loginData, "loginData")
+
+    const { state, dispatch } = useContext(MyContext)
+
+    console.log(state?.user, "state?.user")
+
+    // console.log(loginData, "loginData")
     const router = useNavigate();
     function handleChange(e) {
         // console.log(e.target.value)
@@ -15,9 +21,11 @@ const LoginForm = () => {
         if (loginData.email && loginData.password) {
             try {
                 // const response = await axios.post('http://localhost:8000/login', { loginData })
-                const response = { data: { success: true, message: "Login Successfull." } }
+                const response = { data: { success: true, message: "Login Successfull.", user: { name: "Swaraj", email: "swaraj@gmail.com" }, token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c" } }
                 if (response.data.success) {
                     toast.success(response.data.message)
+                    dispatch({ type: "LOGIN", payload: response.data.user })
+                    localStorage.setItem('my-token', JSON.stringify(response.data.token))
                     setLoginData({ email: "", password: "" })
                     router('/')
                 }
