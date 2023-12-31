@@ -24,3 +24,27 @@ useNavigate
 useParams 
 
 
+
+
+Redux setup 
+Step 1 :
+ npm install redux react-redux
+
+Step 2 :
+Create actions.js file and define actions
+
+Step 3 :
+Create reducers.js file and define reducer and state
+
+Step 4 : 
+Create rootreducer.js file
+Combine reducers, import reducer and combine them
+
+Step 5 : 
+Create store.js file, we'll configure reduxstore with rootreducer(step  4)
+
+Step 6 :
+Add provider with store in index.js file over app compoentn
+
+Step 7:
+Inside any component , use useSeceltor and useDispatch, to access state and dispatch method also import actions(step 2 function)

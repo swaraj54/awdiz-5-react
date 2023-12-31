@@ -30,6 +30,7 @@ import SingleProduct from './Components/20-12/SingleProduct';
 import UseMemo from './Components/22-12/UseMemo';
 import UseCallback from './Components/23-12/UseCallback';
 import UseReducer from './Components/24-12/UseReducer';
+import ReduxCounter from './Components/31-12-redux/ReduxCounter';
 
 function App() {
 
@@ -71,6 +72,7 @@ function App() {
         <Route path='/use-memo' element={<UseMemo />} />
         <Route path='/use-callback' element={<UseCallback />} />
         <Route path='/use-reducer' element={<UseReducer />} />
+        <Route path='/redux-counter' element={<ReduxCounter />} />
         {/* assignment - set routes for login and register */}
       </Routes>
       <Footer />
