@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import toast from 'react-hot-toast'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 
@@ -36,7 +35,7 @@ const AllProducts = () => {
             {products?.length ? <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around' }}>
                 {products.map((product) => (
                     <div onClick={() => Routing(product.id)} style={{ height: '500px', width: "23%", border: '2px solid black', marginBottom: '30px', cursor: 'pointer' }}>
-                        <img style={{ height: "400px", margin: 'auto' }} src={product.image} />
+                        <img alt='img' style={{ height: "400px", margin: 'auto' }} src={product.image} />
                         <h1>{product.title}</h1>
                         <h3>${product.price}/-</h3>
                     </div>

@@ -32,7 +32,7 @@ const SingleProduct = () => {
     return (
         <div>
             <h1>{productData.title}</h1>
-            <img src={productData.image} />
+            <img alt='img' src={productData.image} />
         </div>
     )
 }

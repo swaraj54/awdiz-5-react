@@ -47,4 +47,45 @@ Step 6 :
 Add provider with store in index.js file over app compoentn
 
 Step 7:
-Inside any component , use useSeceltor and useDispatch, to access state and dispatch method also import actions(step 2 function)
+Inside any component , use useSelector and useDispatch, to access state and dispatch method also import actions(step 2 function)
+
+
+
+Tailwind Installation 
+
+Step 1: 
+Install tailwindcss via npm, and create your tailwind.config.js file.
+npm install -D tailwindcss
+npx tailwindcss init
+
+Step 2 
+Configure your template paths
+Add the paths to all of your template files in your tailwind.config.js file.
+
+Step 3 
+Add the Tailwind directives to your CSS
+Add the @tailwind directives for each of Tailwind’s layers to your main CSS file.
+inside indes.css 
+
+Step 4 
+
+
+
+
+
+Deploy React app
+
+Step 1 : Use command npm run build to check all error
+
+
+Step 2 : go to vercel.com , login use github, Click on Add button and select Project
+
+
+Step 3 : select github repo 
+
+Step 4 : Choose framework as create-react-app
+
+
+Step 5 : Select root directory
+
+Step 6 : Click on Deploy

@@ -1,4 +1,4 @@
-import Navbar from "./Navbar";
+
 
 function Register() {
     return (

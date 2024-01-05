@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Components/Home';
@@ -25,7 +24,6 @@ import RegisterForm from './Components/10-12/RegisterForm';
 import LoginForm from './Components/15-12/LoginForm';
 import ChildToParent from './Components/16-12/ChildToParent';
 import AllProducts from './Components/16-12/AllProducts';
-import Todo from './Todo';
 import SingleProduct from './Components/20-12/SingleProduct';
 import UseMemo from './Components/22-12/UseMemo';
 import UseCallback from './Components/23-12/UseCallback';
@@ -36,7 +34,7 @@ function App() {
 
   const [myName, setMyName] = useState("Awdiz")
 
-  const [students, setStudents] = useState([{ image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs1wQLZqIhYASivJhwDTSzAD7sN-N9w-3sCQKc4XrV8wIgFwsB-Sb_RRqKe3akMfSPxiA&usqp=CAU', name: "virat", marks: "100" }, { image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs1wQLZqIhYASivJhwDTSzAD7sN-N9w-3sCQKc4XrV8wIgFwsB-Sb_RRqKe3akMfSPxiA&usqp=CAU", name: "rahul", marks: "100" }, { name: "rohit", marks: "100", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs1wQLZqIhYASivJhwDTSzAD7sN-N9w-3sCQKc4XrV8wIgFwsB-Sb_RRqKe3akMfSPxiA&usqp=CAU" }]);
+  const students = [{ image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs1wQLZqIhYASivJhwDTSzAD7sN-N9w-3sCQKc4XrV8wIgFwsB-Sb_RRqKe3akMfSPxiA&usqp=CAU', name: "virat", marks: "100" }, { image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs1wQLZqIhYASivJhwDTSzAD7sN-N9w-3sCQKc4XrV8wIgFwsB-Sb_RRqKe3akMfSPxiA&usqp=CAU", name: "rahul", marks: "100" }, { name: "rohit", marks: "100", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs1wQLZqIhYASivJhwDTSzAD7sN-N9w-3sCQKc4XrV8wIgFwsB-Sb_RRqKe3akMfSPxiA&usqp=CAU" }];
 
 
   function ChangeName() {

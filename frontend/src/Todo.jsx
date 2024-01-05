@@ -1,4 +1,4 @@
-import { all } from 'axios';
+
 import React, { useState } from 'react'
 
 const Todo = () => {
@@ -23,13 +23,13 @@ const Todo = () => {
             <button onClick={handleSubmit}>Submit</button>
 
             {allTodos?.length && <div>
-                {allTodos.map((todo, i) => {
+                {allTodos.map((todo, i) => (
                     <>
                         <h1>{todo}</h1>
                         <button onClick={() => DeleteTodo(i)}>Delete</button>
                     </>
 
-                })}
+                ))}
             </div>}
         </div>
     )

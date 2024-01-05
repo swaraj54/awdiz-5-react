@@ -8,7 +8,7 @@ const ReduxCounter = () => {
 
     return (
         <div>
-            <h1>Co(unt : {count}</h1>
+            <h1>Count : {count}</h1>
             <button onClick={() => dispatch(increment())}>Increment</button>
             <button onClick={() => dispatch(decrement())}>Decrement</button>
         </div>

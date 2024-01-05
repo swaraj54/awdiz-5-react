@@ -1,6 +1,6 @@
 // useContext
 
-import axios from 'axios';
+
 import { createContext, useEffect, useReducer } from 'react'
 
 export const MyContext = createContext();

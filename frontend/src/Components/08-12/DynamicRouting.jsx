@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 
 const DynamicRouting = () => {
     const router = useNavigate();
-    const [myAge, setMyAge] = useState(25)
+    const myAge = 25
 
     return (
         <div>

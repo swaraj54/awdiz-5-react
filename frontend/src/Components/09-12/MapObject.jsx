@@ -6,7 +6,7 @@ const MapObject = ({ myStudentsData }) => {
         <div>
             {myStudentsData.map((studentData) => (
                 <div>
-                    <img src={studentData.image} />
+                    <img alt='my-imag' src={studentData.image} />
                     <h1>{studentData.name}</h1>
                     <p>{studentData.marks}</p>
                 </div>

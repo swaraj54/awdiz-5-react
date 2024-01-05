@@ -1,9 +1,10 @@
 import toast from "react-hot-toast";
-import { createElement, useContext, useState } from 'react'
+import {  useContext, useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { useNavigate } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { MyContext } from "../context/AuthContext";
+import './Home.css';
 
 const navigation = [
     { name: 'Product', href: '#' },
@@ -70,16 +71,24 @@ function Home() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const router = useNavigate()
 
-    const { state, dispatch } = useContext(MyContext);
+    const { state } = useContext(MyContext);
 
     console.log(state, "state")
 
     return (
         <div>
             {/* <Navbar /> */}
-            <h1>Home Page - {state.user?.name}</h1>
+            <h1>Home Updated Page - {state.user?.name}</h1>
             <button onClick={() => toast.success("Success")}>Success</button><br />
             <button onClick={() => toast.error("Error")}>Error</button>
+
+
+            <div id='myid' className="myclassname text-center space-between">
+                Testing classname
+            </div>
+
+
+
 
             <h1 className="text-left pt-10 text-3xl font-bold underline">Testing tailwind css</h1>
 
