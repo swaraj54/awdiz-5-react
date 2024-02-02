@@ -73,6 +73,7 @@ function App() {
         <Route path='/use-reducer' element={<UseReducer />} />
         <Route path='/redux-counter' element={<ReduxCounter />} />
         <Route path='/add-product' element={<AddProduct />} />
+        {/* <Route path='/products' element={<Products />} /> */}
         {/* assignment - set routes for login and register */}
       </Routes>
       <Footer />
