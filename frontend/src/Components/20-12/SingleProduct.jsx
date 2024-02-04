@@ -1,11 +1,15 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import api from '../../helper/AxiosConfig';
+import { MyContext } from '../../context/AuthContext';
+import toast from 'react-hot-toast';
 
 const SingleProduct = () => {
     const [productData, setProductData] = useState({});
-    console.log(productData,"productData")
-
+    console.log(productData, "productData")
+    const { state } = useContext(MyContext)
+    const router = useNavigate();
     const { id } = useParams();
 
     console.log(id, "id")
@@ -13,13 +17,22 @@ const SingleProduct = () => {
 
     async function getSingleProductData() {
         try {
-
-            const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
+            const response = await api.post('/product/get-single-product', { productId: id });
             // console.log(response.data)
-            setProductData(response.data)
-
+            if (response.data.success) {
+                setProductData(response.data.product)
+            }
         } catch (error) {
             console.log(error)
+        }
+    }
+
+    async function AddToCart() {
+        if (state?.user?.name) {
+
+        } else {
+            toast.error("Please login.")
+            router(`/login-form/${productData._id}`)
         }
     }
 
@@ -30,9 +43,12 @@ const SingleProduct = () => {
     }, [id])
 
     return (
-        <div>
-            <h1>{productData.title}</h1>
-            <img alt='img' src={productData.image} />
+        <div style={{ textAlign: 'center', display: 'flex', justifyContent: "center" }}>
+            <h1>{productData?.name}</h1>
+            <h1>{productData?.price}</h1>
+            <h1>{productData?.category}</h1>
+            <img style={{ width: "30%", height: "400px" }} alt='img' src={productData?.image} />
+            <button onClick={AddToCart}>Add to Cart</button>
         </div>
     )
 }

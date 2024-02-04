@@ -30,6 +30,7 @@ import UseCallback from './Components/23-12/UseCallback';
 import UseReducer from './Components/24-12/UseReducer';
 import ReduxCounter from './Components/31-12-redux/ReduxCounter';
 import AddProduct from './Components/AddProduct';
+import ReadProducts from './Components/ReadProducts';
 
 function App() {
 
@@ -65,15 +66,16 @@ function App() {
         <Route path='/children-prop' element={<ChildrenProp />} />
         <Route path='/register-form' element={<RegisterForm />} />
         <Route path='/login-form' element={<LoginForm />} />
+        <Route path='/login-form/:productId' element={<LoginForm />} />
         <Route path='/child-to-parent' element={<ChildToParent />} />
         <Route path='/all-products' element={<AllProducts />} />
-        <Route path='/single-product/:id' element={<SingleProduct />} />
         <Route path='/use-memo' element={<UseMemo />} />
         <Route path='/use-callback' element={<UseCallback />} />
         <Route path='/use-reducer' element={<UseReducer />} />
         <Route path='/redux-counter' element={<ReduxCounter />} />
         <Route path='/add-product' element={<AddProduct />} />
-        {/* <Route path='/products' element={<Products />} /> */}
+        <Route path='/read-products' element={<ReadProducts />} />
+        <Route path='/single-product/:id' element={<SingleProduct />} />
         {/* assignment - set routes for login and register */}
       </Routes>
       <Footer />
