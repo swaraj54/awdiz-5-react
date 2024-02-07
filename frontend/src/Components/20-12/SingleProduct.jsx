@@ -12,8 +12,6 @@ const SingleProduct = () => {
     const router = useNavigate();
     const { id } = useParams();
 
-    console.log(id, "id")
-
 
     async function getSingleProductData() {
         try {
@@ -28,8 +26,19 @@ const SingleProduct = () => {
     }
 
     async function AddToCart() {
-        if (state?.user?.name) {
-
+        console.log(state?.user, "state?.user")
+        if (state?.user?.userId) {
+            try {
+                const response = await api.post('/user/add-cart', { productId: id, userId: state?.user?.userId });
+                // console.log(response.data)
+                if (response.data.success) {
+                    toast.success(response.data.message)
+                    router('/cart')
+                }
+            } catch (error) {
+                console.log(error)
+                toast.error(error?.response?.data?.message)
+            }
         } else {
             toast.error("Please login.")
             router(`/login-form/${productData._id}`)

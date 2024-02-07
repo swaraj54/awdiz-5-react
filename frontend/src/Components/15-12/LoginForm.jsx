@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { MyContext } from '../../context/AuthContext';
 import axios from 'axios';
 
@@ -10,6 +10,8 @@ const LoginForm = () => {
     const { state, dispatch } = useContext(MyContext)
 
     console.log(state?.user, "state?.user")
+
+    const { productId } = useParams();
 
     // console.log(loginData, "loginData")
     const router = useNavigate();
@@ -28,7 +30,11 @@ const LoginForm = () => {
                     dispatch({ type: "LOGIN", payload: response.data.user })
                     localStorage.setItem('my-token', JSON.stringify(response.data.token))
                     setLoginData({ email: "", password: "" })
-                    router('/')
+                    if (productId) {
+                        router(`/single-product/${productId}`)
+                    } else {
+                        router('/')
+                    }
                 }
             } catch (error) {
                 console.log(error)

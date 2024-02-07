@@ -31,6 +31,7 @@ import UseReducer from './Components/24-12/UseReducer';
 import ReduxCounter from './Components/31-12-redux/ReduxCounter';
 import AddProduct from './Components/AddProduct';
 import ReadProducts from './Components/ReadProducts';
+import Cart from './Components/Cart';
 
 function App() {
 
@@ -76,6 +77,7 @@ function App() {
         <Route path='/add-product' element={<AddProduct />} />
         <Route path='/read-products' element={<ReadProducts />} />
         <Route path='/single-product/:id' element={<SingleProduct />} />
+        <Route path='/cart' element={<Cart />} />
         {/* assignment - set routes for login and register */}
       </Routes>
       <Footer />
