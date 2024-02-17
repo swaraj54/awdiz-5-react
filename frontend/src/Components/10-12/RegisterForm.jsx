@@ -1,12 +1,13 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import RestrictsLoggedInUser from '../Redircts/RestrictsLoggedInUser';
 
 const RegisterForm = () => {
     const router = useNavigate();
 
     const [userData, setUserData] = useState({ name: "", email: "", password: "", confirmPassword: "" })
-    console.log(userData, "userData")
+    // console.log(userData, "userData")
     async function handleSubmit(e) {
         e.preventDefault();
         if (userData.name && userData.email && userData.password && userData.confirmPassword) {
@@ -38,7 +39,7 @@ const RegisterForm = () => {
         setUserData({...userData, [e.target.name]: e.target.value });
     }
     return (
-        <div>
+        <RestrictsLoggedInUser>
             <h1>Register</h1>
             <form onSubmit={handleSubmit}>
                 <label>Name :</label><br />
@@ -51,7 +52,7 @@ const RegisterForm = () => {
                 <input type='password' required onChange={handleChange} name='confirmPassword' value={userData.confirmPassword} /><br />
                 <input type='submit' value="Register" />
             </form>
-        </div>
+        </RestrictsLoggedInUser>
     )
 }
 

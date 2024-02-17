@@ -1,4 +1,5 @@
 import { useState } from "react";
+import RestrictsNonLoggedInUser from "./Redircts/RestrictsNonLoggedInUser";
 
 
 
@@ -25,14 +26,14 @@ function Counter() {
         setCounter((prevValue) => prevValue + 2)
     }
     return (
-        <div>
+        <RestrictsNonLoggedInUser>
             <h1>Counter - {counter}</h1><br />
             <button onClick={Increment} >+</button><br />
             <button onClick={Decrement}>-</button><br />
             <button onClick={test}>+</button><br />
             <button onClick={IncrementBy2}>+2</button><br />
             {isLoggedIn ? <button onClick={Change} >Logout</button> : <button onClick={Change}>Login</button>}
-        </div>
+        </RestrictsNonLoggedInUser>
     )
 }
 

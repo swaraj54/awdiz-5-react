@@ -1,15 +1,16 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 import { useNavigate, useParams } from 'react-router-dom';
 import { MyContext } from '../../context/AuthContext';
 import axios from 'axios';
+import RestrictsLoggedInUser from '../Redircts/RestrictsLoggedInUser';
 
 const LoginForm = () => {
     const [loginData, setLoginData] = useState({ email: "", password: "" });
 
     const { state, dispatch } = useContext(MyContext)
 
-    console.log(state?.user, "state?.user")
+    console.log(state, "state?.user")
 
     const { productId } = useParams();
 
@@ -45,8 +46,9 @@ const LoginForm = () => {
         }
     }
 
+
     return (
-        <div>
+        <RestrictsLoggedInUser>
             <h1>Login</h1>
             <form onSubmit={handleSubmit}>
                 <label>Email</label><br />
@@ -55,7 +57,7 @@ const LoginForm = () => {
                 <input type='password' required onChange={handleChange} name='password' value={loginData.password} /><br />
                 <input type='submit' value='Login' />
             </form>
-        </div>
+        </RestrictsLoggedInUser>
     )
 }
 
